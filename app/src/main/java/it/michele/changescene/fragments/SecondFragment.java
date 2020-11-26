@@ -10,8 +10,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import it.michele.changescene.AsyncLoadFragment;
 import it.michele.changescene.MainActivity;
 import it.michele.changescene.R;
+import it.michele.changescene.Transitions;
 
 public class SecondFragment extends Fragment {
 
@@ -22,9 +24,10 @@ public class SecondFragment extends Fragment {
 
         Button button = view.findViewById(R.id.load_fragment1);
         button.setOnClickListener((v) -> {
-            MainActivity.fragmentLoaded = new FirstFragment();
+            /*MainActivity.fragmentLoaded = new FirstFragment();
             MainActivity.fragmentManager.beginTransaction()
-                    .replace(R.id.container_fragment, MainActivity.fragmentLoaded).commit();
+                    .replace(R.id.container_fragment, MainActivity.fragmentLoaded).commit();*/
+            new AsyncLoadFragment(new FirstFragment(), Transitions.SLIDE_DOWN).execute();
         });
 
         return view;
