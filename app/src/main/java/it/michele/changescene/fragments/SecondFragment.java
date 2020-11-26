@@ -11,7 +11,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import it.michele.changescene.AsyncLoadFragment;
-import it.michele.changescene.MainActivity;
 import it.michele.changescene.R;
 import it.michele.changescene.Transitions;
 
